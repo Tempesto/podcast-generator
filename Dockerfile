@@ -8,10 +8,11 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y \
     python3.10 \
     python3-pip \
-    git 
+    git \
+    python3-yaml
 
 # Install the PyYAML library using pip3 (Python package manager).
-RUN pip3 install pyyaml
+#RUN pip3 install pyyaml
 
 # Copy the `feed.py` file from the local filesystem into the container, placing it at `/usr/bin/feed.py`.
 COPY feed.py /usr/bin/feed.py
