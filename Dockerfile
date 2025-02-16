@@ -10,22 +10,14 @@ RUN apt-get update && apt-get install -y \
     python3.10 \
     python3-pip \
     git \
-    python3-yaml \
-    python3-venv
+    python3-yaml 
 
-# Create a virtual environment
-RUN python3 -m venv /venv
-
-# Upgrade pip inside the virtual environment
-RUN /venv/bin/pip install --upgrade pip
-
-# Install python dependencies inside the virtual environment
-RUN /venv/bin/pip install pyyaml
-
-# Copy application files
+# Copy the `feed.py` file from the local filesystem into the container, placing it at `/usr/bin/feed.py`.
 COPY feed.py /usr/bin/feed.py
+
+# Copy the `entrypoint.sh` file from the local filesystem into the root of the container.
 COPY entrypoint.sh /entrypoint.sh
 
-# Set the virtual environemnt as the default Python environment
-ENV PATH="/venv/bin:$PATH"
-ENTRYPOINT ["/entrypoint.sh"]
+# Specify that the `/entrypoint.sh` script should be executed when the container starts.
+# This script will become the main process of the container.
+ENTRYPOINT [ "/entrypoint.sh" ]
