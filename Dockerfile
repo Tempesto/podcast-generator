@@ -6,7 +6,7 @@ FROM ubuntu:latest
 # - python3-pip: Python package manager
 # - git: version control system
 RUN apt-get update && apt-get install -y \
-    python3.9 \
+    python3.10 \
     python3-pip \
     git 
 
