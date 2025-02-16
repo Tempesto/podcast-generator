@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     git
 
 # Install the PyYAML library using pip3 (Python package manager).
-RUN pip3 install PyYAML
+RUN pip3 install PyYAML==5.3.1
 
 # Copy the `feed.py` file from the local filesystem into the container, placing it at `/usr/bin/feed.py`.
 COPY feed.py /usr/bin/feed.py
