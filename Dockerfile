@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install the PyYAML library using pip3 (Python package manager).
-RUN RUN python3.12 -m ensurepip --default-pip && \
+RUN python3.12 -m ensurepip --default-pip && \
     python3.12 -m pip install --no-cache-dir --upgrade pip setuptools && \
     python3.12 -m pip install --no-cache-dir --upgrade PyYAML
 
