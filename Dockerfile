@@ -8,8 +8,9 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y \
     python3.12 \
     python3-pip \
-    git \
-    pip3 install --upgrade pip
+    git
+    
+RUN pip3 install --upgrade pip
 
 # Install the PyYAML library using pip3 (Python package manager).
 RUN pip3 install PyYAML
