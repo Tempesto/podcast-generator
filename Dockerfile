@@ -6,19 +6,12 @@ FROM ubuntu:latest
 # - python3-pip: Python package manager
 # - git: version control system
 RUN apt-get update && apt-get install -y \
-    python3.12 \
+    python3.9 \
     python3-pip \
-    git \
-    build-essential \
-    libyaml-dev \
-    python3.12-dev  \  
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    git 
 
 # Install the PyYAML library using pip3 (Python package manager).
-RUN python3.12 -m ensurepip --default-pip && \
-    python3.12 -m pip install --no-cache-dir --upgrade pip setuptools && \
-    python3.12 -m pip install --no-cache-dir --upgrade PyYAML
+RUN pip3 install pyyaml
 
 # Copy the `feed.py` file from the local filesystem into the container, placing it at `/usr/bin/feed.py`.
 COPY feed.py /usr/bin/feed.py
