@@ -17,7 +17,7 @@ git config --global --add safe.directory /github/workspace
 
 # Run a Python script located at /usr/bin/feeed.py.
 # Note: There is a typo in the script name ("feeed.py" should likely be "feed.py").
-python3 /usr/bin/feeed.py
+python3 /usr/bin/feed.py
 
 # Stage all changes in the Git repository and create a commit with the message "Update Feed".
 git add -A && git commit -m "Update Feed"
